@@ -1,0 +1,233 @@
+
+Swagger URL is :- http://localhost:8000/swagger
+
+1. Create a new student
+  a. URL: '/student/'
+  b. Method: POST
+  c. Description: Create a new student.
+  d. Response: 
+	{
+    	"id": 1,
+    	"student_name": "test user 1",
+    	"gender": "M",
+    	"adhar_card_number": "123456781234",
+    	"dob": "1995-10-12",
+    	"identification_marks": "Blck xys",
+    	"admission_category": "General",
+    	"height": 6.9,
+    	"weight": 90.0,
+    	"email": null,
+    	"contact_detail": "7018326262",
+    	"address": "xyz colony India"
+	}
+
+2. List all student
+  a. URL: '/student-list/'
+  b. Method: GET
+  c. Description: Retrieves a list of all students.
+  d. Response: 
+	{
+    	"id": 1,
+    	"student_name": "test user 1",
+    	"gender": "M",
+    	"adhar_card_number": "123456781234",
+    	"dob": "1995-10-12",
+    	"identification_marks": "Blck xys",
+    	"admission_category": "General",
+    	"height": 6.9,
+    	"weight": 90.0,
+    	"email": null,
+    	"contact_detail": "7018326262",
+    	"address": "xyz colony India"
+	},
+	{
+    	"id": 2,
+    	"student_name": "test user 2",
+    	"gender": "M",
+    	"adhar_card_number": "123456781231",
+    	"dob": "1999-1-12",
+    	"identification_marks": "Blck xx",
+    	"admission_category": "General",
+    	"height": 6.9,
+    	"weight": 70.0,
+    	"email": user2@gmail.com,
+    	"contact_detail": "7018326261",
+    	"address": "abc colony India"
+	}
+
+3. Create a new parent
+  a. URL: '/parent/'
+  b. Method: POST
+  c. Description: Creates a new parent.
+  d. Response:
+	{
+	"id": 1,
+      	"father_name": "userM1",
+      	"father_qualification": "abc",
+      	"father_profession": "xyz",
+      	"father_designation": "xxx",
+      	"father_aadhar_card": "0",
+      	"father_mobile_number": "7832112345",
+      	"father_email": null,
+      	"mother_name": "userF1",
+      	"mother_qualification": "xas",
+      	"mother_profession": "cyz",
+      	"mother_designation": "ddd",
+      	"mother_aadhar_card": "0",
+      	"mother_mobile_number": "7011187223",
+      	"mother_email": null,
+      	"student": 1
+    	}
+
+4. List all parents
+  a. URL: '/parent-list/'
+  b. Method: GET
+  c. Description: Retrieves a list of all parents.
+  d. Response:
+{
+	"id": 1,
+      	"father_name": "userM1",
+      	"father_qualification": "abc",
+      	"father_profession": "xyz",
+      	"father_designation": "xxx",
+      	"father_aadhar_card": "0",
+      	"father_mobile_number": "7832112345",
+      	"father_email": null,
+      	"mother_name": "userF1",
+      	"mother_qualification": "xas",
+      	"mother_profession": "cyz",
+      	"mother_designation": "ddd",
+      	"mother_aadhar_card": "0",
+      	"mother_mobile_number": "7011187223",
+      	"mother_email": null,
+      	"student": 1
+    	},
+{
+	"id": 2,
+      	"father_name": "userM2",
+      	"father_qualification": "did",
+      	"father_profession": "dfd",
+      	"father_designation": "cuc",
+      	"father_aadhar_card": "123456781234",
+      	"father_mobile_number": "7832002345",
+      	"father_email": m2@gmail.com,
+      	"mother_name": "userF2",
+      	"mother_qualification": "xass",
+      	"mother_profession": "cyaz",
+      	"mother_designation": "ddad",
+      	"mother_aadhar_card": "987654329876",
+      	"mother_mobile_number": "7022187223",
+      	"mother_email": f2@gmail.com,
+      	"student": 2
+    	}
+
+5. Create academic details
+  a. URL: '/academic-details/'
+  b. Method: POST
+  c. Description: Creates academic details.
+  d. Response:
+	{
+	"id": 1,
+	"class_name": "5",
+	"section": "C",
+       	"date_of_joining": "2023-02-19",
+       	"student": 1
+        }
+	and enrolment id  auto increment shown in Django admin: "enrollment_id": "180723tes004" 
+
+6. List academic details
+  a. URL: '/academic-details-list/'
+  b. Method: GET
+  c. Description: Retrieves a list of all academic details.
+  d. Response:
+	{
+	"id": 1,
+	"class_name": "5",
+	"section": "C",
+       	"date_of_joining": "2023-02-19",
+       	"student": 1
+        },
+	and enrolment id  auto increment shown in Django admin: "enrollment_id": "180723tes004"
+	{
+	"id": 2,
+	"class_name": "10",
+	"section": "D",
+       	"date_of_joining": "2023-07-18",
+       	"student": 2
+        },
+	and enrolment id  auto increment shown in Django admin: "enrollment_id": "180723tes038"
+
+7. Upload a document
+  a. URL: '/document-upload/'
+  b. Method: POST
+  c. Description: Uploads a document.
+  d. Response:
+	{
+      	"id": 1,
+      	"document_file": "http://localhost:8000/documents/backup_TZNsBcX.txt",
+      	"student": 1
+    	}
+
+8. List all documents
+  a. URL: '/document-list/'
+  b. Method: GET
+  c. Description: Retrieves a list of all academic details.
+  d. Response:
+	{
+      	"id": 1,
+      	"document_file": "http://localhost:8000/documents/backup_TZNsBcX.txt",
+      	"student": 1
+    	}
+
+9. Filter students
+  a. URL: '/student-filter/'
+  b. Method: GET
+  c. Description: Filters students based on certain criteria.
+  d. Parameters: 
+	> 'class': 5
+	> 'section': C
+	> 'admission_category': General
+     Example Request: GET /student-filter/?class=5&section=C&admission_category=General
+  e. Response:
+	{
+            "id": 1,
+            "student_name": "test user 1",
+            "gender": "M",
+            "adhar_card_number": "123456781234",
+            "dob": "1995-10-12",
+            "identification_marks": "Blck xys",
+            "admission_category": "General",
+            "height": 6.9,
+            "weight": 90.0,
+            "email": null,
+            "contact_detail": "7018326262",
+            "address": "xyz colony India"
+        }
+
+
+10. Export students filter to Excel
+  a. URL: 'students/export/excel/'
+  b. Method: GET
+  c. Description: Exports the list of students to an Excel file.
+  d. Response: Returns the Excel file containing the student filter data.
+
+
+11. Export students filter to PDF
+  a. URL: 'students/export/pdf/'
+  b. Method: GET
+  c. Description: Exports the list of students to an PDF file.
+  d. Response: Returns the PDF file containing the student filter data.
+
+
+12. Sending Email
+  a. URL: '/mail/'
+  b. Method: POST
+  c. Description: Sending a mail.
+  d. Response:
+	{
+  	"student": 1,
+  	"class_name": "10th Grade",
+  	"section": "A",
+  	"date_of_joining": "2023-07-18"
+	}
+
