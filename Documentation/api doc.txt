@@ -231,3 +231,12 @@ Swagger URL is :- http://localhost:8000/swagger
   	"date_of_joining": "2023-07-18"
 	}
 
+13. Create a Bulk data from CSV
+  a. URL: '/bulk-import/'
+  b. Method: POST
+  c. Description: Import Bulky data.
+  d. Response: 
+	{
+    	"file": 'detail.csv',
+
+	}

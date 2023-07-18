@@ -4,6 +4,7 @@ from .views import *
 urlpatterns = [
     path('student/', StudentCreateView.as_view(), name='student-create'),
     path('student-list/',StudentListView.as_view(), name='student-list'),
+    path('bulk-import/', BulkImportView.as_view()),
     path('parent/', ParentCreateView.as_view(), name='parent-create'),
     path('parent-list/',ParentListView.as_view(), name='parent-list'),
     path('academic-details/', AcademicDetailsCreateView.as_view(), name='academic-details-create'),

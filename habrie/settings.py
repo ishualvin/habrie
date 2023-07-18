@@ -140,4 +140,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'testervbhu@gmail.com'
 EMAIL_HOST_PASSWORD = 'Ishan@123'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'your_email@example.com'
+DEFAULT_FROM_EMAIL = 'testervbhu@gmail.com'

@@ -1,5 +1,8 @@
-from rest_framework import generics
+import csv
+from rest_framework import generics, status
+from rest_framework.parsers import FileUploadParser
 from rest_framework.exceptions import ValidationError
+from io import TextIOWrapper
 from openpyxl import Workbook
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
@@ -17,6 +20,26 @@ class StudentCreateView(generics.CreateAPIView):
 class StudentListView(generics.ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+
+class BulkImportView(generics.CreateAPIView):
+    parser_class = (FileUploadParser,)
+
+    def create(self, request, *args, **kwargs):
+        file = request.data['file']
+        csv_file = TextIOWrapper(file, encoding=request.encoding)
+        reader = csv.DictReader(csv_file)
+        students = []
+        for row in reader:
+            serializer = StudentSerializer(data=row)
+            if serializer.is_valid():
+                students.append(serializer.validated_data)
+            else:
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        Student.objects.bulk_create([Student(**data) for data in students])
+        return Response("Data imported successfully", status=status.HTTP_201_CREATED)
+    
 
 class ParentCreateView(generics.CreateAPIView):
     queryset = Parent.objects.all()

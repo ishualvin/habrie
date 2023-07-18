@@ -1,0 +1,12 @@
+student_name,gender,dob,identiification_marks,admission_category,height,weight,contact_detail,address
+aa,M,12-10-1995,xyz,General,5,60,7018100001,Shimla
+aaa,M,13-10-1995,xyz,General,5,60,7018100002,Shimla
+fdfd,M,14-10-1995,xyz,General,5,60,7018100003,Shimla
+dfsd,M,15-10-1995,xyz,General,5,60,7018100004,Shimla
+dsfsd,M,16-10-1995,xyz,General,5,60,7018100005,Shimla
+sdfsdf,M,17-10-1995,xyz,General,5,60,7018100006,Shimla
+dsfsd,M,18-10-1995,xyz,General,5,60,7018100007,Shimla
+dsfsd,F,19-10-1995,xyz,General,5,60,7018100008,Shimla
+dfds,F,20-10-1995,xyz,General,5,60,7018100009,Shimla
+sdfds,F,21-10-1995,xyz,General,5,60,7018100010,Shimla
+dsfds,F,22-10-1995,xyz,General,5,60,7018100011,Shimla
