@@ -42,6 +42,16 @@ INSTALLED_APPS = [
     'testapi'
 ]
 
+
+# Celery configuration
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+
+
+# Configure Celery to use Django settings module
+CELERY_APP_NAME = 'Testing API'
+CELERY_IMPORTS = ('testapi.tasks',)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

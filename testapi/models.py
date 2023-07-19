@@ -27,31 +27,8 @@ class Student(models.Model):
         return self.student_name
 
 
-class Parent(models.Model):
-    student = models.OneToOneField(Student, on_delete=models.CASCADE)
-    father_name = models.CharField(max_length=100, null=False, blank=False)
-    father_qualification = models.CharField(max_length=100, null=False, blank=False)
-    father_profession = models.CharField(max_length=100, null=False, blank=False)
-    father_designation = models.CharField(max_length=100, null=False, blank=False)
-    father_aadhar_card = models.CharField(max_length=12, default="0")
-    father_mobile_number =  models.CharField(max_length=12, blank=False, null=False)
-    father_email = models.EmailField(max_length=70, blank=True, null=True)
-    
-    mother_name = models.CharField(max_length=100, null=False, blank=False)
-    mother_qualification = models.CharField(max_length=100, null=False, blank=False)
-    mother_profession = models.CharField(max_length=100, null=False, blank=False)
-    mother_designation = models.CharField(max_length=100, null=False, blank=False)
-    mother_aadhar_card = models.CharField(max_length=12, default="0")
-    mother_mobile_number = models.CharField(max_length=12, blank=False, null=False)
-    mother_email = models.EmailField(max_length=70, blank=True, null=True)
-
-    def __str__(self):
-        return f"Parent of {self.student}"
-
-
-
 class Academic_Detail(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE, related_name='academic_details')
     class_name = models.CharField(max_length=100, null=False, blank=False)
     section = models.CharField(max_length=100, null=False, blank=False)
     date_of_joining = models.DateField()
@@ -80,6 +57,27 @@ class Academic_Detail(models.Model):
     def __str__(self):
         return f"Academic Details of {self.student}"
 
+
+class Parent(models.Model):
+    student = models.OneToOneField(Student, on_delete=models.CASCADE, related_name='parent')
+    father_name = models.CharField(max_length=100, null=False, blank=False)
+    father_qualification = models.CharField(max_length=100, null=False, blank=False)
+    father_profession = models.CharField(max_length=100, null=False, blank=False)
+    father_designation = models.CharField(max_length=100, null=False, blank=False)
+    father_aadhar_card = models.CharField(max_length=12, default="0")
+    father_mobile_number =  models.CharField(max_length=12, blank=False, null=False)
+    father_email = models.EmailField(max_length=70, blank=True, null=True)
+    
+    mother_name = models.CharField(max_length=100, null=False, blank=False)
+    mother_qualification = models.CharField(max_length=100, null=False, blank=False)
+    mother_profession = models.CharField(max_length=100, null=False, blank=False)
+    mother_designation = models.CharField(max_length=100, null=False, blank=False)
+    mother_aadhar_card = models.CharField(max_length=12, default="0")
+    mother_mobile_number = models.CharField(max_length=12, blank=False, null=False)
+    mother_email = models.EmailField(max_length=70, blank=True, null=True)
+
+    def __str__(self):
+        return f"Parent of {self.student}"
 
 
 class Document(models.Model):
